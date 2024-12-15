@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    height: 100vh;
+    font-size: 16px;
+}
+
+.button {
+    width: 190px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    font-family: inherit;
+    padding: 10px 23px;
+    cursor: pointer;
+    margin-top: 98px;
+    background-color: transparent;
+    transition: all .5s;
+
+    &:hover {
+        background-color: rgb(202, 198, 198);
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.filtering-form {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    top: 51px;
+    left: -29%;
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.3215686275);
+    padding: 40px 48px 40px 48px;
+
+    &__contener-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 32px 65px;
+    }
+
+    &__time {
+        border: none;
+        width: 136px;
+        height: 177px;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: left;
+        line-height: 31px;
+    }
+
+    &__legend {
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.5px;
+        text-align: left;
+        color: #050505;
+    }
+
+    &__price {
+        width: 190.5px;
+        height: 73px;
+    }
+
+    &__color {
+        width: 189px;
+        height: 78px;
+    }
+
+    &__roomtype {
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.filtering-from-time {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.filtering-from-roomtype {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.color-options {
+    width: 210px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.radio {
+    &__input {
+        display: none;
+
+        &:checked+.radio__label::before {
+            background-image: url(./img/Vector\ 1.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 30px;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+    }
+
+    &__label::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        border: 1px solid #888888;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        background-color: #fff;
+    }
+
+}
+
+.range {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &__input {
+        width: 190px;
+        height: 10px;
+        overflow: hidden;
+        outline: none;
+    }
+
+    &__input,
+    &__input::-webkit-slider-runnable-track,
+    &__input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: none;
+    }
+
+    &__input::-webkit-slider-runnable-track {
+        width: 200px;
+        height: 1px;
+        background: #000;
+    }
+
+    &__input:nth-child(2)::-webkit-slider-runnable-track {
+        background: none;
+    }
+
+    &__input::-webkit-slider-thumb {
+        position: relative;
+        height: 8px;
+        width: 8px;
+        margin-top: -4px;
+        background: #000;
+        border: 1px solid #000;
+        border-radius: 25px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    &__input::-webkit-slider-thumb:active {
+        cursor: grabbing;
+    }
+
+    &__input:nth-child(1)::-webkit-slider-thumb {
+        z-index: 2;
+    }
+
+    &__slider {
+        font-family: sans-serif;
+        font-size: 14px;
+        position: relative;
+        height: 20px;
+        width: 210px;
+        display: inline-block;
+        margin-top: -5px;
+    }
+
+    &__slider input {
+        position: absolute;
+    }
+
+    &__label {
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.checkbox {
+    &__input {
+        display: none;
+
+        &:checked+.checkbox__label::before {
+            background-image: url(./img/Vector\ 1.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &--white {
+            &:checked+.checkbox__label::before {
+                background-image: url(./img/Vector\ 2\ \(1\).svg);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+        position: relative;
+        padding-left: 30px;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &__label::before {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border: 1px solid #888888;
+        position: absolute;
+        left: 0;
+        background-color: #fff;
+    }
+
+    &__label--white::before {
+        background-color: #fff;
+        border-color: #808080;
+    }
+
+    &__label--black::before {
+        background-color: #000;
+        border-color: #000;
+    }
+
+    &__label--brown::before {
+        background-color: brown;
+        border-color: brown;
+    }
+
+    &__label--grey::before {
+        background-color: #808080;
+        border-color: #888888;
+    }
+
+    &__label--red::before {
+        background-color: red;
+        border-color: red;
+    }
+
+    &__label--orange::before {
+        background-color: orange;
+        border-color: orange;
+
+    }
+
+    &__label--yellow::before {
+        background-color: yellow;
+        ;
+        border-color: yellow;
+    }
+
+    &__label--green::before {
+        background-color: green;
+        border-color: green;
+    }
+
+    &__label--lightgreen::before {
+        background-color: rgb(150, 226, 150);
+        border-color: rgb(150, 226, 150);
+    }
+
+    &__label--blue::before {
+        background-color: blue;
+        border-color: blue;
+    }
+
+    &__label--darkblue::before {
+        background-color: darkblue;
+        border-color: darkblue;
+    }
+
+    &__label--violet::before {
+        background-color: violet;
+        border-color: violet;
+    }
+
+    &__label--purpure::before {
+        background-color: purple;
+        border-color: purple;
+    }
+
+    &__label--pink::before {
+        background-color: pink;
+        border-color: pink;
+    }
+}
+
+@import '_tablet.scss';
+@import '_mobile.scss';
